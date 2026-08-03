@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-vu-cream font-sans text-vu-black antialiased;
+  }
+}
+
+@layer components {
+  /* Antonio all-caps eyebrow label — the FLH signature above every section headline */
+  .eyebrow {
+    @apply font-condensed text-[0.8125rem] font-bold uppercase tracking-[0.03em];
+  }
+  .btn-gold {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-vu bg-vu-gold px-5 py-2.5
+      font-sans text-sm font-medium text-vu-black transition-colors duration-200
+      hover:bg-vu-highlight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vu-oak
+      disabled:cursor-not-allowed disabled:bg-vu-gray-light disabled:text-vu-gray-dark;
+  }
+  .btn-ghost-dark {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-vu border border-vu-gold/40 px-5 py-2.5
+      font-sans text-sm font-medium text-vu-gold transition-colors duration-200 hover:border-vu-gold hover:text-vu-gold-light
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vu-gold;
+  }
+  .card {
+    @apply rounded-vu border border-vu-gray-light bg-vu-white p-6;
+  }
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #FEEEB6 0%, #CFAE70 45%, #B49248 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  @supports not (background-clip: text) {
+    .gold-gradient-text { color: #CFAE70; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
